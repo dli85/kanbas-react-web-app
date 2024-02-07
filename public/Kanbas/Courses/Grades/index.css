@@ -1,0 +1,9 @@
+table.grade-table {
+    border: 1px;
+  }
+
+  table.grade-table th,
+  table.grade-table td {
+    border: 1px solid;
+    text-align: center;
+  }
