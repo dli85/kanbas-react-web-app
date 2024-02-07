@@ -190,6 +190,11 @@
     width: 67%;
     float: left;
  }
+
+ .asd { background-color: red; color: white }
+#asd { background-color: red }
+.zxc { background-color: blue; color: white }
+#zxc { background-color: blue }
  
  .wd-grid-col-left-sidebar {
     width: 20%;
