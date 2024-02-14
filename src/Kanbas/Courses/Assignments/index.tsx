@@ -9,10 +9,11 @@ function Assignments() {
     (assignment) => assignment.course === courseId);
   return (
     <>
-      <div>
-        <input placeholder="Search for Assignment"></input>
+      <div className="top-bar-container">
+        <input id="assignment-button" placeholder="Search for Assignment"></input>
         <button>+Group</button>
         <button>Assignment</button>
+        <button className="more-button"><FaEllipsisV className="ms-2" /></button>
       </div>
       <ul className="list-group wd-modules">
         <li className="list-group-item">
