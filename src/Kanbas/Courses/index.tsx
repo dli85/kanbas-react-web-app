@@ -1,5 +1,5 @@
 import { courses } from "../../Kanbas/Database";
-import { useParams, Navigate, Route, Routes, } from "react-router-dom";
+import { useParams, Navigate, Route, Routes, useLocation} from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
@@ -7,11 +7,14 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 
 function Courses() {
-  const { courseId } = useParams();
+  const { courseId, } = useParams();
   const course = courses.find((course) => course._id === courseId);
+  // useLocation is used to get the last url param for the breadcrumb
+  const location = useLocation();
+  const currentPath = location.pathname.split('/').pop();
   return (
     <div>
-      <h1><HiMiniBars3 /> Course {course?.name}</h1>
+      <h1><HiMiniBars3 /> Course {course?.name} {">"} {currentPath}</h1>
       <CourseNavigation />
       <div>
         <div
