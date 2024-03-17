@@ -1,4 +1,3 @@
-import { courses } from "../../Kanbas/Database";
 import {
   useParams,
   Navigate,
