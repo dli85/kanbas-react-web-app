@@ -15,31 +15,64 @@ function ModuleList() {
   return (
     <ul className="list-group">
       <li className="list-group-item">
-        <button
-          onClick={() => dispatch(addModule({ ...module, course: courseId }))}
-        >
-          Add
-        </button>
-        <button onClick={() => dispatch(updateModule(module))}>Update</button>
-        <input
-          value={module.name}
-          onChange={(e) =>
-            dispatch(setModule({ ...module, name: e.target.value }))
-          }
-        />
-        <textarea
-          value={module.description}
-          onChange={(e) =>
-            dispatch(setModule({ ...module, description: e.target.value }))
-          }
-        />
+        <div className="grid-container">
+          <div className="grid-item" style={{ marginBottom: "5px" }}>
+            <div className="row">
+              <div className="col-md-4">
+                <input
+                  className="form-control"
+                  style={{ marginRight: "5px" }}
+                  value={module.name}
+                  onChange={(e) =>
+                    dispatch(setModule({ ...module, name: e.target.value }))
+                  }
+                />
+              </div>
+              <div className="col-md-2">
+                <button
+                  style={{ marginRight: "5px" }}
+                  onClick={() =>
+                    dispatch(addModule({ ...module, course: courseId }))
+                  }
+                  className="btn btn-primary"
+                >
+                  Add
+                </button>
+              </div>
+              <div className="col-md-2">
+                <button
+                  onClick={() => dispatch(updateModule(module))}
+                  className="btn btn-secondary"
+                >
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+          <textarea
+            className="form-control"
+            value={module.description}
+            onChange={(e) =>
+              dispatch(setModule({ ...module, description: e.target.value }))
+            }
+          />
+        </div>
       </li>
       {moduleList
         .filter((module) => module.course === courseId)
         .map((module, index) => (
           <li key={index} className="list-group-item">
-            <button onClick={() => dispatch(setModule(module))}>Edit</button>
-            <button onClick={() => dispatch(deleteModule(module._id))}>
+            <button
+              style={{ marginRight: "5px" }}
+              className="btn btn-primary"
+              onClick={() => dispatch(setModule(module))}
+            >
+              Edit
+            </button>
+            <button
+              className="btn btn-danger"
+              onClick={() => dispatch(deleteModule(module._id))}
+            >
               Delete
             </button>
             <h3>{module.name}</h3>

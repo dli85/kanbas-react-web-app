@@ -47,13 +47,25 @@ function Home() {
         <br />
         <h2>TODO</h2>
         <hr />
-        <div className="todo-item">
-          <p className="red">Grade A1 - ENV + HTML</p>
-          <p className="bottom">100 points - Sept 18 at 11:59 pm</p>
-        </div>
-        <div className="todo-item">
-          <p className="red">Grade A2 - CSS + Bootstrap</p>
-          <p className="bottom">100 points - Sept 18 at 11:59 pm</p>
+        <div className="todo-container">
+          <div className="todo-item">
+            <div className="icon-column">
+              <FaClock style={{ color: "red" }} />
+            </div>
+            <div className="text-column">
+              <p className="red">Grade A1 - ENV + HTML</p>
+              <p className="bottom">100 points - Sept 18 at 11:59 pm</p>
+            </div>
+          </div>
+          <div className="todo-item">
+            <div className="icon-column">
+              <FaClock style={{ color: "red" }} />
+            </div>
+            <div className="text-column">
+              <p className="red">Grade A2 - CSS + Bootstrap</p>
+              <p className="bottom">100 points - Sept 18 at 11:59 pm</p>
+            </div>
+          </div>
         </div>
       </div>
     </>

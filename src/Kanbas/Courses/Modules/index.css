@@ -43,3 +43,17 @@
 .flush-right {
     margin-right: 0px;
 }
+
+.top-bar {
+  display: flex;             /* Enable flexbox */
+  align-items: center;      /* Vertical alignment for all items */
+  gap: 10px;  
+}
+
+/* This targets the container that holds buttons specifically */
+.button-container {
+  display: flex;            /* Enable flexbox for the buttons' container */
+  flex-direction: column;   /* Align buttons vertically */
+  align-items: center;      /* Center the buttons horizontally */
+  margin: 0 auto;           /* Center the button container itself */
+}
